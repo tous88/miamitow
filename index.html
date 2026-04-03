@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Fast, affordable towing in Miami. We come to you in 30 minutes or less. Request a tow now.">
+<title>Miami Tow — Fast Towing Service</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --yellow: #FFD000;
+    --yellow-dark: #E6BB00;
+    --black: #0A0A0A;
+    --dark: #111111;
+    --dark2: #1A1A1A;
+    --gray: #888;
+    --light: #F5F5F5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: #fff; font-family: 'Barlow', sans-serif; overflow-x: hidden; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; background: rgba(10,10,10,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid #222; }
+.nav-logo { font-family: ‘Barlow Condensed’, sans-serif; font-size: 22px; font-weight: 900; color: var(–yellow); letter-spacing: 1px; }
+.nav-phone { font-size: 14px; font-weight: 600; color: #fff; text-decoration: none; background: var(–yellow); color: var(–black); padding: 8px 16px; border-radius: 6px; }
+
+/* HERO */
+.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 100px 20px 60px; position: relative; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, #0A0A0A 0%, #1a1200 50%, #0A0A0A 100%); }
+.hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,208,0,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,208,0,0.04) 1px, transparent 1px); background-size: 40px 40px; }
+.hero-glow { position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(255,208,0,0.12) 0%, transparent 70%); pointer-events: none; }
+.hero-content { position: relative; z-index: 1; max-width: 600px; }
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,208,0,0.1); border: 1px solid rgba(255,208,0,0.3); border-radius: 20px; padding: 6px 14px; font-size: 12px; font-weight: 600; color: var(–yellow); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 24px; animation: fadeUp 0.5s ease both; }
+.hero-badge span { width: 6px; height: 6px; background: var(–yellow); border-radius: 50%; animation: pulse 1.5s infinite; }
+.hero-h1 { font-family: ‘Barlow Condensed’, sans-serif; font-size: clamp(52px, 12vw, 90px); font-weight: 900; line-height: 0.95; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 20px; animation: fadeUp 0.5s 0.1s ease both; }
+.hero-h1 .yellow { color: var(–yellow); }
+.hero-sub { font-size: 17px; color: #aaa; line-height: 1.6; max-width: 420px; margin-bottom: 36px; animation: fadeUp 0.5s 0.2s ease both; }
+.hero-sub strong { color: #fff; }
+.hero-cta { animation: fadeUp 0.5s 0.3s ease both; }
+.btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(–yellow); color: var(–black); font-family: ‘Barlow Condensed’, sans-serif; font-size: 20px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 16px 32px; border-radius: 8px; border: none; cursor: pointer; text-decoration: none; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 4px 30px rgba(255,208,0,0.3); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(255,208,0,0.4); }
+.hero-trust { margin-top: 32px; display: flex; gap: 24px; flex-wrap: wrap; animation: fadeUp 0.5s 0.4s ease both; }
+.trust-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #888; }
+.trust-item span { color: var(–yellow); font-size: 16px; }
+
+/* URGENCY STRIP */
+.strip { background: var(–yellow); padding: 14px 20px; text-align: center; }
+.strip p { font-family: ‘Barlow Condensed’, sans-serif; font-size: 18px; font-weight: 700; color: var(–black); letter-spacing: 0.5px; }
+.strip a { color: var(–black); font-weight: 900; }
+
+/* FORM SECTION */
+.form-section { padding: 70px 20px; background: var(–dark); }
+.section-label { font-family: ‘Barlow Condensed’, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(–yellow); margin-bottom: 12px; }
+.section-title { font-family: ‘Barlow Condensed’, sans-serif; font-size: clamp(32px, 7vw, 52px); font-weight: 900; text-transform: uppercase; line-height: 1; margin-bottom: 10px; }
+.section-sub { font-size: 15px; color: #888; margin-bottom: 36px; }
+.form-card { background: var(–dark2); border: 1px solid #2a2a2a; border-radius: 12px; padding: 28px 24px; max-width: 500px; }
+.form-row { margin-bottom: 16px; }
+.form-row label { display: block; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #888; margin-bottom: 7px; }
+.form-row input, .form-row select, .form-row textarea { width: 100%; background: #111; border: 1px solid #333; border-radius: 7px; padding: 12px 14px; color: #fff; font-size: 15px; font-family: ‘Barlow’, sans-serif; outline: none; transition: border-color 0.2s; }
+.form-row input:focus, .form-row select:focus, .form-row textarea:focus { border-color: var(–yellow); }
+.form-row select option { background: #111; }
+.form-row textarea { resize: vertical; }
+.form-submit { width: 100%; background: var(–yellow); color: var(–black); font-family: ‘Barlow Condensed’, sans-serif; font-size: 22px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; padding: 16px; border: none; border-radius: 8px; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 4px 20px rgba(255,208,0,0.25); margin-top: 8px; }
+.form-submit:hover { transform: translateY(-1px); box-shadow: 0 6px 30px rgba(255,208,0,0.35); }
+.form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+.form-note { font-size: 12px; color: #555; text-align: center; margin-top: 12px; }
+.success-box { display: none; background: rgba(129,199,132,0.1); border: 1px solid rgba(129,199,132,0.3); border-radius: 10px; padding: 24px; text-align: center; }
+.success-box .icon { font-size: 40px; margin-bottom: 12px; }
+.success-box h3 { font-family: ‘Barlow Condensed’, sans-serif; font-size: 24px; font-weight: 900; color: #81C784; margin-bottom: 8px; text-transform: uppercase; }
+.success-box p { font-size: 14px; color: #888; }
+
+/* HOW IT WORKS */
+.how-section { padding: 70px 20px; background: var(–black); }
+.steps { display: flex; flex-direction: column; gap: 20px; max-width: 500px; margin-top: 36px; }
+.step { display: flex; gap: 18px; align-items: flex-start; }
+.step-num { font-family: ‘Barlow Condensed’, sans-serif; font-size: 42px; font-weight: 900; color: var(–yellow); line-height: 1; flex-shrink: 0; width: 44px; }
+.step-text h4 { font-family: ‘Barlow Condensed’, sans-serif; font-size: 20px; font-weight: 700; text-transform: uppercase; margin-bottom: 4px; }
+.step-text p { font-size: 14px; color: #888; line-height: 1.5; }
+
+/* WHY US */
+.why-section { padding: 70px 20px; background: var(–dark); }
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 36px; max-width: 500px; }
+.why-card { background: var(–black); border: 1px solid #222; border-radius: 10px; padding: 20px 16px; }
+.why-icon { font-size: 28px; margin-bottom: 10px; }
+.why-card h4 { font-family: ‘Barlow Condensed’, sans-serif; font-size: 17px; font-weight: 700; text-transform: uppercase; margin-bottom: 4px; }
+.why-card p { font-size: 13px; color: #777; line-height: 1.5; }
+
+/* FOOTER */
+footer { background: #050505; border-top: 1px solid #1a1a1a; padding: 30px 20px; text-align: center; }
+footer .logo { font-family: ‘Barlow Condensed’, sans-serif; font-size: 24px; font-weight: 900; color: var(–yellow); margin-bottom: 8px; }
+footer p { font-size: 13px; color: #444; }
+footer a { color: var(–yellow); text-decoration: none; }
+
+/* ANIMATIONS */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+/* FLOATING CTA */
+.float-cta { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 99; display: none; }
+.float-cta a { display: flex; align-items: center; gap: 8px; background: var(–yellow); color: var(–black); font-family: ‘Barlow Condensed’, sans-serif; font-size: 18px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; padding: 14px 28px; border-radius: 50px; text-decoration: none; box-shadow: 0 4px 30px rgba(255,208,0,0.4); white-space: nowrap; }
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav>
+  <div class="nav-logo">🚛 MiamiTow</div>
+  <a class="nav-phone" href="tel:+15613350989">Call Now</a>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span></span> Available 24/7 in Miami</div>
+    <h1 class="hero-h1">Stuck?<br><span class="yellow">We'll be</span><br>there fast.</h1>
+    <p class="hero-sub">Fast, reliable towing anywhere in Miami-Dade. <strong>Average arrival: 30 minutes.</strong> No hidden fees. Real people answer.</p>
+    <div class="hero-cta">
+      <a href="#request" class="btn-primary">🚛 Request a Tow</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item"><span>✓</span> No hidden fees</div>
+      <div class="trust-item"><span>✓</span> Licensed & insured</div>
+      <div class="trust-item"><span>✓</span> 30-min response</div>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCY STRIP -->
+
+<div class="strip">
+  <p>🔥 Need a tow RIGHT NOW? Call us: <a href="tel:+15613350989">(561) 335-0989</a></p>
+</div>
+
+<!-- FORM SECTION -->
+
+<section class="form-section" id="request">
+  <div class="section-label">Get Help Now</div>
+  <h2 class="section-title">Request<br>Your Tow</h2>
+  <p class="section-sub">Fill out below — we'll call you back in under 5 minutes.</p>
+
+  <div class="form-card">
+    <div id="lead-form-wrap">
+      <form id="lead-form" action="https://formspree.io/f/xkopqnlv" method="POST">
+        <div class="form-row">
+          <label>Your Name *</label>
+          <input type="text" name="name" placeholder="John Smith" required>
+        </div>
+        <div class="form-row">
+          <label>Phone Number *</label>
+          <input type="tel" name="phone" placeholder="(305) 555-0000" required>
+        </div>
+        <div class="form-row">
+          <label>Current Location *</label>
+          <input type="text" name="location" placeholder="Street address or intersection" required>
+        </div>
+        <div class="form-row">
+          <label>Service Needed</label>
+          <select name="service">
+            <option value="Tow">Tow to mechanic / dealership</option>
+            <option value="Flatbed">Flatbed tow</option>
+            <option value="Jump Start">Jump start</option>
+            <option value="Lockout">Locked out of car</option>
+            <option value="Tire">Flat tire change</option>
+            <option value="Fuel">Out of fuel</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>Vehicle (optional)</label>
+          <input type="text" name="vehicle" placeholder="2019 Toyota Camry">
+        </div>
+        <input type="hidden" name="_subject" value="🚛 New Tow Lead - MiamiTow">
+        <input type="hidden" name="_replyto" value="toussaintshelton2@gmail.com">
+        <button type="submit" class="form-submit" id="submit-btn">🚛 Send My Request</button>
+        <p class="form-note">We'll call you within 5 minutes. No spam, ever.</p>
+      </form>
+    </div>
+    <div class="success-box" id="success-box">
+      <div class="icon">✅</div>
+      <h3>Request Received!</h3>
+      <p>We'll call you back within 5 minutes.<br>For urgent help call <a href="tel:+13055550000" style="color:var(--yellow)">(305) 555-0000</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+
+<section class="how-section">
+  <div class="section-label">Simple Process</div>
+  <h2 class="section-title">How It<br>Works</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-text">
+        <h4>Submit Your Request</h4>
+        <p>Fill out the form above or call us directly. Takes 60 seconds.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-text">
+        <h4>We Call You Back</h4>
+        <p>Our dispatcher calls within 5 minutes to confirm details and give you an ETA.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-text">
+        <h4>Driver Is On The Way</h4>
+        <p>A licensed driver heads to your location. Average arrival is 30 minutes.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-text">
+        <h4>You're Good To Go</h4>
+        <p>We tow your vehicle safely to your destination. Pay on site, no surprises.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+
+<section class="why-section">
+  <div class="section-label">Why MiamiTow</div>
+  <h2 class="section-title">We've Got<br>You Covered</h2>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">⚡</div>
+      <h4>Fast Response</h4>
+      <p>30-min average arrival across Miami-Dade.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">💰</div>
+      <h4>Fair Pricing</h4>
+      <p>Upfront quotes. No hidden fees. Ever.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🌙</div>
+      <h4>24/7 Service</h4>
+      <p>Day or night, weekends and holidays.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🛡️</div>
+      <h4>Licensed & Insured</h4>
+      <p>Your vehicle is safe with our certified drivers.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="logo">🚛 MiamiTow</div>
+  <p>Serving Miami-Dade County 24/7<br>
+  <a href="tel:+15613350989">(561) 335-0989</a> &nbsp;·&nbsp;
+  <a href="mailto:toussaintshelton2@gmail.com">toussaintshelton2@gmail.com</a></p>
+  <p style="margin-top:12px">&copy; 2026 MiamiTow. All rights reserved.</p>
+</footer>
+
+<!-- FLOATING CTA -->
+
+<div class="float-cta" id="float-cta">
+  <a href="#request">🚛 Request a Tow</a>
+</div>
+
+<script>
+// Show floating CTA after scrolling past hero
+window.addEventListener('scroll', function() {
+  var floatCta = document.getElementById('float-cta');
+  if (window.scrollY > 500) {
+    floatCta.style.display = 'block';
+  } else {
+    floatCta.style.display = 'none';
+  }
+});
+
+// Form submission
+var form = document.getElementById('lead-form');
+var submitBtn = document.getElementById('submit-btn');
+var successBox = document.getElementById('success-box');
+var formWrap = document.getElementById('lead-form-wrap');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
+
+  var data = new FormData(form);
+
+  fetch(form.action, {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  }).then(function(res) {
+    formWrap.style.displ
