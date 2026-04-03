@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Get verified towing leads in Miami delivered straight to your phone. Join MiamiTow's partner network.">
+<title>MiamiTow — Partner Network</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --yellow: #FFD000;
+    --black: #0A0A0A;
+    --dark: #111111;
+    --dark2: #1A1A1A;
+    --dark3: #222222;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: #fff; font-family: 'Barlow', sans-serif; overflow-x: hidden; }
+
+/* NAV */
+nav { padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1a1a1a; }
+.nav-logo { font-family: ‘Barlow Condensed’, sans-serif; font-size: 22px; font-weight: 900; color: var(–yellow); letter-spacing: 1px; text-decoration: none; }
+.nav-back { font-size: 13px; color: #666; text-decoration: none; display: flex; align-items: center; gap: 6px; }
+.nav-back:hover { color: #fff; }
+
+/* HERO */
+.hero { padding: 60px 20px 50px; text-align: center; position: relative; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(255,208,0,0.08) 0%, transparent 60%); pointer-events: none; }
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,208,0,0.1); border: 1px solid rgba(255,208,0,0.25); border-radius: 20px; padding: 6px 16px; font-size: 12px; font-weight: 600; color: var(–yellow); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+.hero h1 { font-family: ‘Barlow Condensed’, sans-serif; font-size: clamp(38px, 10vw, 64px); font-weight: 900; text-transform: uppercase; line-height: 1; margin-bottom: 16px; }
+.hero h1 span { color: var(–yellow); }
+.hero p { font-size: 16px; color: #888; max-width: 420px; margin: 0 auto 12px; line-height: 1.6; }
+.hero-stat-row { display: flex; justify-content: center; gap: 32px; margin-top: 32px; flex-wrap: wrap; }
+.hero-stat { text-align: center; }
+.hero-stat .val { font-family: ‘Barlow Condensed’, sans-serif; font-size: 36px; font-weight: 900; color: var(–yellow); line-height: 1; }
+.hero-stat .lbl { font-size: 12px; color: #555; text-transform: uppercase; letter-spacing: 1px; margin-top: 3px; }
+
+/* HOW IT WORKS */
+.how-section { padding: 50px 20px; background: var(–dark); }
+.section-label { font-family: ‘Barlow Condensed’, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(–yellow); margin-bottom: 10px; }
+.section-title { font-family: ‘Barlow Condensed’, sans-serif; font-size: clamp(28px, 7vw, 44px); font-weight: 900; text-transform: uppercase; line-height: 1; margin-bottom: 32px; }
+.how-steps { display: flex; flex-direction: column; gap: 16px; max-width: 480px; }
+.how-step { display: flex; gap: 16px; align-items: flex-start; background: var(–dark2); border: 1px solid #2a2a2a; border-radius: 10px; padding: 16px; }
+.how-num { font-family: ‘Barlow Condensed’, sans-serif; font-size: 32px; font-weight: 900; color: var(–yellow); line-height: 1; flex-shrink: 0; width: 36px; }
+.how-text h4 { font-family: ‘Barlow Condensed’, sans-serif; font-size: 17px; font-weight: 700; text-transform: uppercase; margin-bottom: 3px; }
+.how-text p { font-size: 13px; color: #777; line-height: 1.5; }
+
+/* PRICING */
+.pricing-section { padding: 50px 20px; background: var(–black); }
+.plans { display: flex; flex-direction: column; gap: 16px; max-width: 480px; margin-top: 8px; }
+.plan-card { background: var(–dark2); border: 1px solid #2a2a2a; border-radius: 14px; padding: 24px 20px; position: relative; transition: border-color 0.2s; }
+.plan-card.featured { border-color: var(–yellow); background: linear-gradient(135deg, #1a1500 0%, var(–dark2) 100%); }
+.plan-badge { position: absolute; top: -12px; left: 20px; background: var(–yellow); color: var(–black); font-family: ‘Barlow Condensed’, sans-serif; font-size: 12px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; padding: 3px 12px; border-radius: 20px; }
+.plan-name { font-family: ‘Barlow Condensed’, sans-serif; font-size: 22px; font-weight: 900; text-transform: uppercase; margin-bottom: 4px; }
+.plan-price { display: flex; align-items: baseline; gap: 4px; margin-bottom: 6px; }
+.plan-price .amount { font-family: ‘Barlow Condensed’, sans-serif; font-size: 48px; font-weight: 900; color: var(–yellow); line-height: 1; }
+.plan-price .period { font-size: 14px; color: #666; }
+.plan-desc { font-size: 13px; color: #777; margin-bottom: 20px; line-height: 1.5; }
+.plan-features { list-style: none; margin-bottom: 24px; display: flex; flex-direction: column; gap: 9px; }
+.plan-features li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #ccc; }
+.plan-features li .check { color: var(–yellow); font-size: 15px; flex-shrink: 0; }
+.plan-btn { display: block; width: 100%; background: var(–yellow); color: var(–black); font-family: ‘Barlow Condensed’, sans-serif; font-size: 20px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; padding: 14px; border-radius: 8px; text-align: center; text-decoration: none; border: none; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 4px 20px rgba(255,208,0,0.2); }
+.plan-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 28px rgba(255,208,0,0.35); }
+.plan-btn.outline { background: transparent; border: 1px solid #333; color: #aaa; box-shadow: none; }
+.plan-btn.outline:hover { border-color: var(–yellow); color: var(–yellow); box-shadow: none; transform: none; }
+.plan-note { font-size: 11px; color: #444; text-align: center; margin-top: 10px; }
+
+/* WHAT YOU GET */
+.sample-section { padding: 50px 20px; background: var(–dark); }
+.sample-card { background: var(–black); border: 1px solid #222; border-radius: 12px; padding: 20px; max-width: 480px; margin-top: 24px; }
+.sample-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(–yellow); margin-bottom: 14px; }
+.sample-row { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid #1a1a1a; font-size: 14px; }
+.sample-row:last-child { border-bottom: none; }
+.sample-row .key { color: #555; }
+.sample-row .val { color: #fff; font-weight: 500; }
+.sample-note { font-size: 12px; color: #444; margin-top: 14px; }
+
+/* FAQ */
+.faq-section { padding: 50px 20px; background: var(–black); }
+.faqs { max-width: 480px; margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+.faq { background: var(–dark2); border: 1px solid #222; border-radius: 10px; padding: 16px 18px; }
+.faq h4 { font-family: ‘Barlow Condensed’, sans-serif; font-size: 16px; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; }
+.faq p { font-size: 13px; color: #777; line-height: 1.6; }
+
+/* FOOTER */
+footer { background: #050505; border-top: 1px solid #1a1a1a; padding: 28px 20px; text-align: center; }
+footer .logo { font-family: ‘Barlow Condensed’, sans-serif; font-size: 22px; font-weight: 900; color: var(–yellow); margin-bottom: 8px; }
+footer p { font-size: 13px; color: #444; }
+footer a { color: var(–yellow); text-decoration: none; }
+
+/* STICKY BOTTOM CTA */
+.sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: var(–dark2); border-top: 1px solid #2a2a2a; padding: 12px 20px; display: flex; gap: 10px; z-index: 50; }
+.sticky-cta a { flex: 1; text-align: center; font-family: ‘Barlow Condensed’, sans-serif; font-size: 16px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; padding: 12px; border-radius: 8px; text-decoration: none; }
+.sticky-cta .s1 { background: transparent; border: 1px solid #333; color: #aaa; }
+.sticky-cta .s2 { background: var(–yellow); color: var(–black); }
+body { padding-bottom: 80px; }
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav>
+  <a class="nav-logo" href="https://tous88.github.io/miamitow/">🚛 MiamiTow</a>
+  <a class="nav-back" href="https://tous88.github.io/miamitow/">← Back to site</a>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-badge">🤝 Partner Network</div>
+  <h1>Get Paid<br><span>Tow Leads</span><br>Delivered</h1>
+  <p>We send you verified customers in Miami who need a tow — right now. You just show up and get paid.</p>
+  <div class="hero-stat-row">
+    <div class="hero-stat"><div class="val">30m</div><div class="lbl">Avg Response</div></div>
+    <div class="hero-stat"><div class="val">24/7</div><div class="lbl">Lead Flow</div></div>
+    <div class="hero-stat"><div class="val">100%</div><div class="lbl">Miami-Dade</div></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+
+<section class="how-section">
+  <div class="section-label">How It Works</div>
+  <h2 class="section-title">Simple.<br>Profitable.</h2>
+  <div class="how-steps">
+    <div class="how-step">
+      <div class="how-num">01</div>
+      <div class="how-text">
+        <h4>Customer Requests a Tow</h4>
+        <p>Someone in Miami fills out our form with their name, phone, location, and vehicle info.</p>
+      </div>
+    </div>
+    <div class="how-step">
+      <div class="how-num">02</div>
+      <div class="how-text">
+        <h4>We Send You the Lead</h4>
+        <p>You get an instant email with all their details — ready to call within seconds.</p>
+      </div>
+    </div>
+    <div class="how-step">
+      <div class="how-num">03</div>
+      <div class="how-text">
+        <h4>You Call & Close the Job</h4>
+        <p>Call the customer, confirm the job, head out. You keep 100% of what you charge them.</p>
+      </div>
+    </div>
+    <div class="how-step">
+      <div class="how-num">04</div>
+      <div class="how-text">
+        <h4>We Keep the Leads Coming</h4>
+        <p>Your subscription keeps running, leads keep flowing. Cancel anytime.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLE LEAD -->
+
+<section class="sample-section">
+  <div class="section-label">What You Receive</div>
+  <h2 class="section-title">Sample<br>Lead</h2>
+  <div class="sample-card">
+    <div class="sample-label">📧 Incoming Lead — Miami-Dade</div>
+    <div class="sample-row"><span class="key">Name</span><span class="val">John Martinez</span></div>
+    <div class="sample-row"><span class="key">Phone</span><span class="val">(786) 555-0142</span></div>
+    <div class="sample-row"><span class="key">Location</span><span class="val">SW 8th St & 57th Ave</span></div>
+    <div class="sample-row"><span class="key">Service</span><span class="val">Tow to mechanic</span></div>
+    <div class="sample-row"><span class="key">Vehicle</span><span class="val">2021 Honda Civic</span></div>
+    <div class="sample-row"><span class="key">Time</span><span class="val">Just now</span></div>
+    <p class="sample-note">Every lead includes full contact info. You call them — they're expecting a tow company.</p>
+  </div>
+</section>
+
+<!-- PRICING -->
+
+<section class="pricing-section" id="pricing">
+  <div class="section-label">Partner Plans</div>
+  <h2 class="section-title">Choose<br>Your Plan</h2>
+  <div class="plans">
+
+```
+<!-- PRO (featured first on mobile) -->
+<div class="plan-card featured">
+  <div class="plan-badge">Most Popular</div>
+  <div class="plan-name">Pro</div>
+  <div class="plan-price"><span class="amount">$299</span><span class="period">/month</span></div>
+  <p class="plan-desc">For active towing companies ready to scale. Unlimited leads, priority delivery.</p>
+  <ul class="plan-features">
+    <li><span class="check">✦</span> Unlimited leads per month</li>
+    <li><span class="check">✦</span> Priority lead routing (first in queue)</li>
+    <li><span class="check">✦</span> Instant email + SMS notifications</li>
+    <li><span class="check">✦</span> All of Miami-Dade covered</li>
+    <li><span class="check">✦</span> Cancel anytime</li>
+  </ul>
+  <a href="https://buy.stripe.com/bJedRb3DcfF89csczZgw007" class="plan-btn">Get Pro — $299/mo</a>
+  <p class="plan-note">Billed monthly. Cancel anytime.</p>
+</div>
+
+<!-- STARTER -->
+<div class="plan-card">
+  <div class="plan-name">Starter</div>
+  <div class="plan-price"><span class="amount">$199</span><span class="period">/month</span></div>
+  <p class="plan-desc">Perfect for getting started. Up to 10 verified leads per month.</p>
+  <ul class="plan-features">
+    <li><span class="check">✦</span> Up to 10 leads per month</li>
+    <li><span class="check">✦</span> Instant email notifications</li>
+    <li><span class="check">✦</span> Miami-Dade coverage</li>
+    <li><span class="check">✦</span> Cancel anytime</li>
+  </ul>
+  <a href="https://buy.stripe.com/28EaEZ7Tsdx00FW0Rhgw006" class="plan-btn outline">Get Starter — $199/mo</a>
+  <p class="plan-note">Billed monthly. Cancel anytime.</p>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- FAQ -->
+
+<section class="faq-section">
+  <div class="section-label">Questions</div>
+  <h2 class="section-title">FAQ</h2>
+  <div class="faqs">
+    <div class="faq">
+      <h4>How fast do I get leads?</h4>
+      <p>The moment a customer submits the form, you get an email instantly. Average response time from customer to your inbox is under 60 seconds.</p>
+    </div>
+    <div class="faq">
+      <h4>What area do leads come from?</h4>
+      <p>All leads are from Miami-Dade County. We market specifically to drivers in the Miami metro area.</p>
+    </div>
+    <div class="faq">
+      <h4>Can I cancel anytime?</h4>
+      <p>Yes. No contracts, no cancellation fees. Cancel from your Stripe dashboard whenever you want.</p>
+    </div>
+    <div class="faq">
+      <h4>What if I get a bad lead?</h4>
+      <p>Contact us at <a href="mailto:toussaintshelton2@gmail.com">toussaintshelton2@gmail.com</a> and we'll make it right.</p>
+    </div>
+    <div class="faq">
+      <h4>How do I receive the leads?</h4>
+      <p>By email to whatever address you sign up with. Pro members also get SMS notifications.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="logo">🚛 MiamiTow</div>
+  <p>Questions? <a href="mailto:toussaintshelton2@gmail.com">toussaintshelton2@gmail.com</a><br>
+  <a href="tel:+15613350989">(561) 335-0989</a></p>
+  <p style="margin-top:12px">&copy; 2026 MiamiTow. All rights reserved.</p>
+</footer>
+
+<!-- STICKY BOTTOM CTA -->
+
+<div class="sticky-cta">
+  <a href="https://buy.stripe.com/28EaEZ7Tsdx00FW0Rhgw006" class="s1">Starter $199</a>
+  <a href="https://buy.stripe.com/bJedRb3DcfF89csczZgw007" class="s2">Pro $299 ✦</a>
+</div>
+
+</body>
+</html>
